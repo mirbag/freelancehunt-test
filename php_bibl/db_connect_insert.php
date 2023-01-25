@@ -1,15 +1,15 @@
 <?php
 		$dblocation = "localhost";
-		$dbname = "user221118_freelancers";
-		$dbuser = "user221118_read";
-		$dbpasswd = "55Oneone55";		
+		$dbname = "asdfsdf";
+		$dbuser = "sdfsdf";
+		$dbpasswd = "sdfsdf";		
 		
 		$lnk_db = mysqli_connect($dblocation, $dbuser, $dbpasswd, $dbname);
 		if (!$lnk_db)
 		{
 			 /*
-			 Äëÿ îòëàäêè èëè áàçà ëåãëà...*/
-			 return array(0, "Íåò ñîåäèíåíèå ñ MySQL. errno: ".mysqli_connect_errno( ).". error: ".mysqli_connect_error( ));
+			 Ã„Ã«Ã¿ Ã®Ã²Ã«Ã Ã¤ÃªÃ¨ Ã¨Ã«Ã¨ Ã¡Ã Ã§Ã  Ã«Ã¥Ã£Ã«Ã ...*/
+			 return array(0, "ÃÃ¥Ã² Ã±Ã®Ã¥Ã¤Ã¨Ã­Ã¥Ã­Ã¨Ã¥ Ã± MySQL. errno: ".mysqli_connect_errno( ).". error: ".mysqli_connect_error( ));
 		}
 		mysqli_query($lnk_db, 'SET NAMES utf8');
 ?>

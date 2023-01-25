@@ -1,0 +1,27 @@
+@media (max-width: 720px) {
+    .cont_tbl table thead {
+     display: none;
+}
+.cont_tbl table tr {
+
+     display: block;
+
+}
+
+.cont_tbl table td {
+     display: flex;
+     justify-content: space-between;
+     font-size: 14px;
+}
+
+.cont_tbl table td::before {
+     content: attr(data-label);
+     font-weight: bold;
+     margin-right: 20px;
+}
+  .popup{
+    width: 70%;
+  }
+
+
+}

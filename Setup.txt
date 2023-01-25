@@ -1,0 +1,71 @@
+Установка:
+
+
+1. База данных mysql:
+			DROP TABLE IF EXISTS `heads`;
+			CREATE TABLE IF NOT EXISTS `heads` (
+			  `id` int(11) NOT NULL,
+			  `title_ru` varchar(200) NOT NULL,
+			  `gv` varchar(100) NOT NULL,
+			  `description_ru` varchar(200) NOT NULL,
+			  `keywords_ru` varchar(200) NOT NULL,
+			  `page` varchar(200) NOT NULL,
+			  PRIMARY KEY (`id`),
+			  KEY `page` (`page`)
+			) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+			DROP TABLE IF EXISTS `projects`;
+			CREATE TABLE IF NOT EXISTS `projects` (
+			  `id` int(11) NOT NULL AUTO_INCREMENT,
+			  `id_freelancehunt` int(11) NOT NULL,
+			  `name` varchar(200) NOT NULL,
+			  `src` varchar(200) NOT NULL,
+			  `budget` double NOT NULL,
+			  `budget_currency` varchar(3) NOT NULL,
+			  `fio_creator` varchar(200) NOT NULL,
+			  `login_creator` varchar(50) NOT NULL,
+			  PRIMARY KEY (`id`)
+			) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+			DROP TABLE IF EXISTS `projects_skills`;
+			CREATE TABLE IF NOT EXISTS `projects_skills` (
+			  `id` int(11) NOT NULL AUTO_INCREMENT,
+			  `id_project` int(11) NOT NULL,
+			  `id_skills` int(11) NOT NULL,
+			  PRIMARY KEY (`id`)
+			) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+			DROP TABLE IF EXISTS `projects_tags`;
+			CREATE TABLE IF NOT EXISTS `projects_tags` (
+			  `id` int(11) NOT NULL AUTO_INCREMENT,
+			  `id_project` int(11) NOT NULL,
+			  `id_tags` int(11) NOT NULL,
+			  PRIMARY KEY (`id`)
+			) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+			DROP TABLE IF EXISTS `skills`;
+			CREATE TABLE IF NOT EXISTS `skills` (
+			  `id` int(11) NOT NULL AUTO_INCREMENT,
+			  `id_freelancehunt` int(11) NOT NULL,
+			  `name_ru` varchar(200) NOT NULL,
+			  PRIMARY KEY (`id`)
+			) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+			DROP TABLE IF EXISTS `tags`;
+			CREATE TABLE IF NOT EXISTS `tags` (
+			  `id` int(11) NOT NULL AUTO_INCREMENT,
+			  `id_freelancehunt` int(11) NOT NULL,
+			  `name_ru` varchar(200) NOT NULL,
+			  PRIMARY KEY (`id`)
+			) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+			COMMIT;
+
+2. Настройки в php_bibl/peremennie.php:
+		а. $dop_site - Путь к проекту
+		б. $full_site - Полный путь (с http:\\ или https:\\)
+3. Настройки в php_bibl/db_connect_insert.php и db_connect_read.php:
+		а. $dbname - Имя базы данных 
+		б. $dbuser - Имя пользователя (Разделено по правам - db_connect_insert с правами записи во все таблицы, db_connect_read - только чтение)
+		в. dbpasswd - Пароль соответствующего пользователя БД.
+4. Не забываем про сертификат SSL;
+5. Забираем данные с freelancehunt - [адресс проекта]/get_info_freelancehunt.php - Предполагается добавлять в CRON с нужной переодичностью.

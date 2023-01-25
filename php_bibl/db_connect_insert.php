@@ -1,8 +1,8 @@
 <?php
 		$dblocation = "localhost";
-		$dbname = "user221118_freelancers";
-		$dbuser = "user221118_read";
-		$dbpasswd = "55Oneone55";		
+		$dbname = "sdfsdf";
+		$dbuser = "sdfsdf";
+		$dbpasswd = "dfgdfgdfgh";		
 		
 		$lnk_db = mysqli_connect($dblocation, $dbuser, $dbpasswd, $dbname);
 		if (!$lnk_db)

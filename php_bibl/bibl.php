@@ -240,10 +240,11 @@ function form_all_projects($wh)
 						}
 					else
 						{
-							if (($chart_val_ot[$i]==0) && ($rows['budget']<=$chart_val_do[$i]))
-							
+							if (($chart_val_ot[$i]==0) && ($rows['budget']<=$chart_val_do[$i]) && ($rows['budget']!=0))
+							{
+								
 								$res_chart1[$i]++;
-							
+							}
 							if (($chart_val_do[$i]==0) && ($rows['budget']>$chart_val_ot[$i]))
 								$res_chart1[$i]++;
 						}

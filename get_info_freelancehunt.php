@@ -94,6 +94,10 @@ function save_tags_skills($what,$arr,$id_project)
 						$first_name_creator=$login_creator='';
 						$project_id=$project['id'];
 						$name=$project['attributes']['name'];
+						$budget=0;
+						$budget_currency='';
+						
+						
 						if (!empty($project['attributes']['budget']['amount']))
 						{
 							$budget=$project['attributes']['budget']['amount'];

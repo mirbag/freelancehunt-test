@@ -8,8 +8,8 @@
 		if (!$lnk_db)
 		{
 			 /*
-			 Äëÿ îòëàäêè èëè áàçà ëåãëà...*/
-			 return array(0, "Íåò ñîåäèíåíèå ñ MySQL. errno: ".mysqli_connect_errno( ).". error: ".mysqli_connect_error( ));
+			 Ð”Ð»Ñ Ð¾Ñ‚Ð»Ð°Ð´ÐºÐ¸ Ð¸Ð»Ð¸ Ð±Ð°Ð·Ð° Ð»ÐµÐ³Ð»Ð°...*/
+			 return array(0, "ÐÐµÑ‚ ÑÐ¾ÐµÐ´Ð¸Ð½ÐµÐ½Ð¸Ðµ Ñ MySQL. errno: ".mysqli_connect_errno( ).". error: ".mysqli_connect_error( ));
 		}
 		mysqli_query($lnk_db, 'SET NAMES utf8');
 ?>
